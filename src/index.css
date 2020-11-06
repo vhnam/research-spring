@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+  background-color: #212121;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.glider-slide {
+  object-fit: contain;
+  background: #111;
+}
+
+.glider-prev {
+  top: calc(50% - 2.5rem);
+  left: 2rem;
+  font-size: 5rem;
+}
+
+.glider-next {
+  top: calc(50% - 2.5rem);
+  right: 2rem;
+  font-size: 5rem;
+}
