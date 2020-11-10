@@ -20,8 +20,8 @@ const Transition: FC = ({children}) => {
     <animated.div
       style={{
         backgroundColor: x.interpolate({
-          range: [0, 1],
-          output: ['#333', '#212121'],
+          range: [0.5, 1],
+          output: ['#373737', '#212121'],
         }),
         opacity: x.interpolate({range: [0, 1], output: [0.3, 1]}),
       }}

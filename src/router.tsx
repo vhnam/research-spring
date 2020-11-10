@@ -1,4 +1,4 @@
-import {lazy} from 'react';
+import lazy from 'react-lazy-with-preload';
 
 import config from './config';
 

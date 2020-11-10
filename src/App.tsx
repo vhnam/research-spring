@@ -1,10 +1,12 @@
 import React, {Suspense, useState} from 'react';
-import {Link, Route, Router, Switch} from 'react-router-dom';
+import {Route, Router, Switch} from 'react-router-dom';
 
 import config from './config';
 import routes from './router';
 
 import history from './helpers/history';
+
+import NavItem from './components/NavItem';
 
 import LoadingPage from './scenes/LoadingPage';
 
@@ -29,25 +31,29 @@ const App = () => {
         <nav className={styles.nav}>
           <ul className={styles.navigation}>
             {links.map((link, index: number) => (
-              <li
+              <NavItem
                 key={link.label.toLowerCase()}
-                style={{
-                  zIndex: index * 10,
-                  bottom:
-                    index <= page
-                      ? `${62 * index}px`
-                      : `${
-                          window.innerWidth - 60 * (links.length - index - 1)
-                        }px`,
-                }}
+                to={link.to}
+                label={link.label}
+                page={page}
+                total={links.length}
+                index={index}
                 onClick={() => setPage(index)}
-              >
-                <Link to={link.to}>{link.label}</Link>
-              </li>
+                onPreload={() => routes[index].component.preload()}
+              />
             ))}
           </ul>
         </nav>
-        <main className={styles.main} style={{marginLeft: `${page * 62}px`}}>
+        <main
+          className={styles.main}
+          style={{
+            paddingLeft: `${(page + 1) * 62}px`,
+            paddingRight:
+              page === 0 || page === links.length - 1
+                ? 0
+                : `${(links.length - page - 1) * 62 - 16}px`,
+          }}
+        >
           <Switch>
             {routes.map((route) => (
               <Route
