@@ -15,7 +15,7 @@
 
 .jumbotron {
   flex: 0 0 auto;
-  width: 50%;
+  width: 45%;
   padding: 0 6.75rem;
   color: #fff;
 }
@@ -34,8 +34,7 @@
 
 .thumbnail {
   flex: 0 0 auto;
-  width: 50%;
-  text-align: center;
+  width: 55%;
 }
 
 .thumbnail > img {
@@ -46,5 +45,5 @@
   position: fixed;
   left: 10rem;
   bottom: 2rem;
-  color: #fff
+  color: #fff;
 }
