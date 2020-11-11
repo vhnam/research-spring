@@ -40,9 +40,9 @@ const NavItem: FC<NavItemProps> = ({
           index <= page
             ? `${62 * index}px`
             : isHovering
-            ? `${window.innerWidth - 62 * (total - index)}px`
-            : `${window.innerWidth - 58 * (total - index)}px`,
-        height: isHovering && index > page ? '78px' : '62px',
+            ? `${window.innerWidth - 62 * (total - index) - 12}px`
+            : `${window.innerWidth - 62 * (total - index)}px`,
+        height: isHovering && index > page ? '74px' : '62px',
       }}
       onClick={onClick}
       onMouseEnter={onPreload}

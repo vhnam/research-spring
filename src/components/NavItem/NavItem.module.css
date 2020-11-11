@@ -9,8 +9,7 @@
   padding: 0;
   width: 100vh;
   height: 3.875rem;
-  background-color: rgba(169, 142, 113, 0.15);
-  backdrop-filter: blur(2rem);
+  background-color: rgb(169, 142, 113);
   border-bottom: 1px solid #fafafa;
   transition: all 300ms;
   cursor: pointer;
@@ -18,11 +17,6 @@
 
 .navItem:first-child {
   border-bottom: none;
-  background-color: rgba(169, 142, 113, 1);
-}
-
-.navItem:hover {
-  background-color: rgba(169, 142, 113, 0.45);
 }
 
 .navItem > a {
